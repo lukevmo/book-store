@@ -118,7 +118,6 @@ export const DetailBook = () => {
                     Cancel
                 </Button>
             </Box>
-
         </div>
     )
 }

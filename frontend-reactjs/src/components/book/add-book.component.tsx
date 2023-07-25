@@ -7,6 +7,7 @@ import { Box, Button, TextField } from '@mui/material';
 import { createItem } from "../../services/book.service";
 import { IBookData } from "../../types/book.type";
 import { useNavigate } from "react-router";
+import FooterPage from "../home/footer.component";
 
 const initialDataState: IBookData = {
     _id: null,
@@ -106,6 +107,7 @@ export const AddNewBook = () => {
                     </Button>
                 </Box>
             </Box>
+            <FooterPage/>
         </div>
     )
 }

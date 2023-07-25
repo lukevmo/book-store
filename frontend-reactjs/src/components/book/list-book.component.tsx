@@ -8,13 +8,14 @@ import { Search } from '../layout/search.component';
 // React tables
 import { CellProps, CellValue, Column, useTable } from 'react-table';
 // Material UI
-import { Pagination, Select, MenuItem, SelectChangeEvent } from '@mui/material';
+import { Pagination, Select, MenuItem, SelectChangeEvent, Button, Box } from '@mui/material';
 // Sweet Alert
 import Swal from 'sweetalert2';
 import { getAllItem, removeItem } from '../../services/book.service';
 import { IBookData, IBookDataTable } from '../../types/book.type';
 import { API_Params } from '../../types/common.type';
 import ConfirmModal from './confirm-modal';
+import FooterPage from '../home/footer.component';
 
 export const BooksList = () => {
   const [books, setBooks] = useState<Array<IBookData>>([]);
@@ -87,14 +88,20 @@ export const BooksList = () => {
     setPage(1);
   };
 
-  const openTutorial = (rowIndex: any) => {
+  const viewDetailBook = (rowIndex: any) => {
     const id = booksRef.current[rowIndex]['_id'];
     navigate('/books/' + id);
   };
+
+  const openNewBook = () => {
+    navigate('/add');
+  };
+
   const handleOpenModal = (id: string) => {
     setOpenConfirmModal(true);
     setBookId(id);
   };
+
   const deleteTutorial = (rowIndex: any) => {
     console.log(booksRef.current[rowIndex]);
     const id = booksRef.current[rowIndex]['_id'];
@@ -151,7 +158,7 @@ export const BooksList = () => {
           return (
             <div className="d-flex justify-content-center">
               <span
-                onClick={() => openTutorial(rowIdx)}
+                onClick={() => viewDetailBook(rowIdx)}
                 style={{ cursor: 'pointer' }}
               >
                 <i className="fa fa-edit action mx-2"></i>
@@ -185,16 +192,12 @@ export const BooksList = () => {
         onChangeSearchTitle={onChangeSearchTitle}
         findByTitle={findByTitle}
       />
-
       <div className="col-md-12 list">
-        {'Items per Page: '}
-        <Select onChange={handlePageSizeChange} value={pageSize}>
-          {pageSizes.map((size) => (
-            <MenuItem key={size} value={size}>
-              {size}
-            </MenuItem>
-          ))}
-        </Select>
+        <Box sx={{ display: 'flex', justifyContent: 'right', '& > :not(style)': { m: 1 }, margin: '0' }}>
+          <Button variant='contained' color='primary' onClick={openNewBook}>
+            Add new Book
+          </Button>
+        </Box>
         <ConfirmModal
           isOpen={openConfirmModal}
           onHandleClose={setOpenConfirmModal}
@@ -231,18 +234,31 @@ export const BooksList = () => {
             })}
           </tbody>
         </table>
-
-        <Pagination
-          className="my-3"
-          count={count}
-          page={page}
-          siblingCount={1}
-          boundaryCount={1}
-          variant="outlined"
-          shape="rounded"
-          onChange={handlePageChange}
-        />
+        <div style={{
+          display: "flex",
+          alignItems: "center"
+        }}>
+          <Pagination
+            className="my-3"
+            count={count}
+            page={page}
+            siblingCount={1}
+            boundaryCount={1}
+            variant="outlined"
+            shape="rounded"
+            onChange={handlePageChange}
+          />
+          <span style={{ margin: "0 1rem" }}>{'Items per Page: '}</span>
+          <Select onChange={handlePageSizeChange} value={pageSize} >
+            {pageSizes.map((size) => (
+              <MenuItem key={size} value={size}>
+                {size}
+              </MenuItem>
+            ))}
+          </Select>
+        </div>
       </div>
+      <FooterPage />
     </div>
   );
 };
