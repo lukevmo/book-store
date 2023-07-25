@@ -12,8 +12,6 @@ The Book Store App provides the following features:
   <li>User authentication: Users can create accounts, log in, and log out.</li>
   <li>Book browsing: Users can view a list of available books and search for specific titles or authors.</li>
   <li>Book details: Users can view detailed information about a specific book, including its title, author, description, and year.</li>
-  <li>Shopping cart: Users can add books to their shopping cart, view the contents of the cart, and remove items.</li>
-  <li>Checkout: Users can proceed to the checkout process, enter their shipping and payment details, and complete a purchase.</li>
 </ul>
 
 ## Tech Stack
