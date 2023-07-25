@@ -17,9 +17,6 @@ export const HomePage = () => {
                 <h1 className="text-center">VMO Holdings</h1>
 
                 <h1>Welcome to my app!</h1>
-
-                <p>You have clicked the button {count} times.</p>
-                <button onClick={() => setCount(count + 1)}>Click me</button>
                 <br />
             </div>
             <FooterPage/>

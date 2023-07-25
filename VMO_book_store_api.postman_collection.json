@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "61c186ee-1d1f-4ba4-9dfc-9e6a000bf52a",
+		"name": "VMO_book_store_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25357479"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "create book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Harry Potter\",\n  \"author\": \"J. K. Rowling\",\n  \"publicationYear\": 1997,\n  \"genre\": \"Female\",\n  \"description\": \"Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books?page=1&pageSize=10&search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get book by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64bfa0b35a408b95271c0cc3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update book by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Harry Potter\",\n  \"author\": \"J. K. Rowling\",\n  \"publicationYear\": 1996,\n  \"genre\": \"Female\",\n  \"description\": \"Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64bfa0b35a408b95271c0cc3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64bfa0b35a408b95271c0cc3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"vmodev@gmail.com\",\n  \"password\": \"12345678\",\n  \"fullName\": \"vmo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users?page=1&pageSize=10&search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64bf9ef95a408b95271c0cb8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"vmo123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64bf9ef95a408b95271c0cb8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZtb0BnbWFpbC5jb20iLCJpZCI6IjY0YmY5ZWY5NWE0MDhiOTUyNzFjMGNiOCIsImlhdCI6MTY5MDI3OTczMCwiZXhwIjoxNjkwMjg2OTMwfQ.ilt056c5IGviDtbPY1cO4oKXYlFtiT7rj7D_Zju2T7I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64bfa13d5a408b95271c0cc7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"vmo@gmail.com\",\n  \"password\": \"12345678\",\n  \"fullName\": \"vmo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signUp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"vmo@gmail.com\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signIn",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5001",
+			"type": "string"
+		}
+	]
+}
