@@ -2,7 +2,7 @@
 
 ## Deployment
 
-The Book Store App is currently deployed on Vercel. You can access the live version of the app by following this link: <a href="https://bookapp-zeta.vercel.app/">Book Store App on Vercel</a>.
+The Book Store App is currently deployed on AWS. You can access the live version of the app by following this link: <a href="http://13.212.126.148:8081/">Book Store App</a>.
 
 ## Features
 
@@ -22,8 +22,6 @@ The Book Store App was built using the following technologies:
 ### Front-end
 - React: A JavaScript library for building user interfaces.
 - HTML and CSS: Markup and styling for the app.
-- Redux: A state management library for managing global application state.
-- React Router: A library for handling routing within a React application.
 
 ### Back-end
 - Node.js: A JavaScript runtime environment for server-side development.
@@ -39,22 +37,22 @@ The Book Store App was built using the following technologies:
 - Database Integration: mongodb
 - API Endpoints
 - Event Listeners
-- Swagger docs http://localhost:3000/api
+- Swagger docs http://13.212.126.148:5001/api
 - Postman Collection (json)
 
 ## Installation and Setup
 To run the Book Store App locally, follow these steps:
 
-1. Clone the repository: https://gitlab.com/vmo_training_fresher/vmo-book-store-app
+1. Clone the repository: https://github.com/lukevmo/book-store
 # Direct to project folder
-  cd vmo-book-store-app
+  cd book-store
 2. Install dependencies for both the backend and frontend:
 # Install backend dependencies
-  cd backend
+  cd backend-mongodb
   npm install
 
 # Install frontend dependencies
-  cd frontend
+  cd frontend-reactjs
   npm install
 
 3. Set up environment variables:
@@ -68,19 +66,3 @@ To run the Book Store App locally, follow these steps:
 # Start the frontend server
   cd frontend
   npm run start
-
-<h3>Home Page With Loading Page<h3/>
-
-<h3>Home Page with Book Details<h3/>
-     
-<h3>Signup Page<h3/>
-
-<h3>Login Page<h3/>
-                 
-<h3>Home Page with Book Details<h3/>
-
-<h3>Search Functionality<h3/>
-
-<h3>Books Details Page<h3/>
-                     
-                       
