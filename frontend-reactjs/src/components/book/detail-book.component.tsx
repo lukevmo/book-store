@@ -46,7 +46,7 @@ export const DetailBook = () => {
     };
 
     const updateBook = () => {
-        updateItem(currentBook['_id'], currentBook)
+        updateItem(currentBook['_id'], {...currentBook, publicationYear:Number(currentBook.publicationYear)})
             .then(() => {
                 Swal.fire(`${currentBook.title} Updated Successfully.`, '', 'success');
                 navigate("/books");
