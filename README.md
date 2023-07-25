@@ -46,21 +46,28 @@ To run the Book Store App locally, follow these steps:
   cd book-store
 2. Install dependencies for both the backend and frontend:
 # Install backend dependencies
+```bash
   cd backend-mongodb
   npm install
-
+```
 # Install frontend dependencies
+```bash
   cd frontend-reactjs
   npm install
+```
 
 3. Set up environment variables:
 - Create a .env file in the backend directory and add the necessary environment variables for database connection, email service, etc.
 
-4. Start the development server:
+4. Start the server:
 # Start the backend server
-  cd backend
+```bash
+  cd backend-mongodb
   npm run start
+```
 
 # Start the frontend server
-  cd frontend
+```bash
+  cd frontend-reactjs
   npm run start
+```
